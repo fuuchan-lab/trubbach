@@ -625,3 +625,110 @@ body::before {
 @media (max-width: 480px) {
   .bus-dest { white-space: normal; }
 }
+
+/* --- Landscape tablet / PC: two columns that fit on one screen --- */
+@media (orientation: landscape) and (min-width: 900px) and (min-height: 560px) {
+  .dashboard {
+    max-width: 1600px;
+    height: 100vh;
+    height: 100dvh;
+    padding: 10px 20px 12px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    column-gap: 14px;
+    overflow: hidden;
+  }
+
+  .dashboard__header {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 8px;
+  }
+
+  .dashboard__col {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    gap: 8px;
+  }
+
+  .dashboard__col .panel {
+    margin-bottom: 0;
+  }
+
+  /* Left column: panels share the height evenly, content centred */
+  .dashboard__col--left .panel {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* keep the title at the top, centre the rest in the remaining space */
+  .dashboard__col--left .panel > h2 + * {
+    margin-top: auto;
+  }
+
+  .dashboard__col--left .panel > :last-child {
+    margin-bottom: auto;
+  }
+
+  .sbb-clock {
+    width: clamp(96px, 16vh, 170px);
+    height: clamp(96px, 16vh, 170px);
+  }
+
+  .digital-time,
+  .fx-headline,
+  .weather-temp {
+    font-size: clamp(1.8rem, 4.2vh, 2.6rem);
+  }
+
+  /* Right column: the webcam absorbs whatever height is left */
+  .panel--webcam {
+    flex: 1 1 0;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .webcam-frame {
+    flex: 1 1 0;
+    min-height: 0;
+  }
+
+  .webcam-frame img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .webcam-linkcard {
+    margin: auto;
+  }
+
+  .panel--bus,
+  .dashboard__col--right .hotel-link,
+  .dashboard__col--right .dashboard__footer {
+    flex: 0 0 auto;
+  }
+
+  .bus-item {
+    padding: 5px 4px;
+  }
+
+  .dashboard__col--right .hotel-link {
+    margin: 0;
+    padding: 8px 16px;
+    font-size: 1rem;
+  }
+
+  .qr-code {
+    width: 70px;
+    height: 70px;
+  }
+}

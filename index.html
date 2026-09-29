@@ -21,6 +21,7 @@
       <p class="subtitle" data-i18n="subtitle">スイスの現在時刻・為替レート・鉄道時計をリアルタイム表示</p>
     </header>
 
+    <div class="dashboard__col dashboard__col--left">
     <section class="panel panel--clock">
       <h2><span data-i18n="clockTitle">スイス時刻</span> <span class="tz">(Europe/Zurich)</span></h2>
       <div class="clock-combo">
@@ -97,7 +98,9 @@
       <p class="fx-updated" id="weatherUpdated">最終更新: --</p>
       <p class="fx-note" data-i18n="weatherNote">出典: Open-Meteo (座標: Trübbach, Wartau SG)。10分ごとに自動更新します。月齢は天文計算による概算値です。</p>
     </section>
+    </div>
 
+    <div class="dashboard__col dashboard__col--right">
     <section class="panel panel--webcam">
       <h2><span data-i18n="webcamTitle">近くのライブカメラ</span> <span class="tz">Balzers, FL</span></h2>
       <div class="webcam-frame">
@@ -144,6 +147,7 @@
         <p class="qr-caption" data-i18n="qrCaption">このアプリのダウンロードはこちら</p>
       </div>
     </footer>
+    </div>
   </main>
 
   <script src="app.js"></script>
