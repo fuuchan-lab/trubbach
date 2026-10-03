@@ -35,17 +35,22 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background-color: #b9793f;
+  /* Swiss chalet: weathered larch log beams laid horizontally */
+  background-color: #6e4224;
   background-image:
-    repeating-linear-gradient(90deg, rgba(0,0,0,0.12) 0, rgba(0,0,0,0.12) 2px, transparent 2px, transparent 160px),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='w'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012 0.12' numOctaves='4' seed='7' result='n'/%3E%3CfeColorMatrix in='n' type='matrix' values='0 0 0 0 0.55  0 0 0 0 0.35  0 0 0 0 0.16  0 0 0 0.9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23w)'/%3E%3C/svg%3E");
-  background-size: auto, 280px 280px;
-  background-blend-mode: multiply, normal;
-  background-attachment: fixed, fixed;
+    repeating-linear-gradient(180deg,
+      rgba(20, 10, 4, 0.85) 0, rgba(20, 10, 4, 0.85) 3px,
+      rgba(255, 210, 150, 0.14) 5px, rgba(255, 210, 150, 0.04) 22px,
+      transparent 48px, rgba(0, 0, 0, 0.18) 80px, rgba(0, 0, 0, 0.38) 96px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='384'%3E%3Cfilter id='w'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.0035 0.11' numOctaves='4' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.22  0 0 0 0 0.12  0 0 0 0 0.05  1.6 0 0 0 -0.55'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23w)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.02 0.6' numOctaves='2' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.85  0 0 0 0 0.62  0 0 0 0 0.38  0.9 0 0 0 -0.45'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+  background-size: 100% 96px, 640px 384px, 400px 400px;
+  background-attachment: fixed, fixed, fixed;
+  filter: brightness(0.92) contrast(1.05);
 }
 
 @media (prefers-color-scheme: dark) {
-  body::before { filter: brightness(0.5) contrast(1.1); }
+  body::before { filter: brightness(0.6) contrast(1.1); }
 }
 
 .dashboard {
@@ -83,24 +88,25 @@ body::before {
 .install-guide {
   flex: 1;
   min-width: 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .install-guide h3 {
   margin: 0 0 6px;
   font-size: 1rem;
-  color: var(--text);
+  color: #ffffff;
 }
 
 .install-guide dl {
   margin: 0;
   font-size: 0.88rem;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.5;
 }
 
 .install-guide dt {
   font-weight: 700;
-  color: var(--text);
+  color: #ffffff;
   display: inline;
 }
 
@@ -135,21 +141,22 @@ body::before {
   max-width: 110px;
   text-align: center;
   font-size: 0.68rem;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .dashboard__header h1 {
   margin: 0;
   font-size: 1.4rem;
-  color: #3b2312;
-  text-shadow: 0 1px 0 rgba(255, 224, 178, 0.4), 0 2px 5px rgba(0, 0, 0, 0.45);
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6), 0 2px 8px rgba(0, 0, 0, 0.45);
 }
 
 .subtitle {
   margin: 0;
   font-size: 0.78rem;
-  color: #4a2c17;
-  text-shadow: 0 1px 0 rgba(255, 224, 178, 0.35), 0 1px 4px rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6), 0 1px 6px rgba(0, 0, 0, 0.4);
 }
 
 .panel {
