@@ -304,11 +304,11 @@ const secondGroup = document.getElementById("sbbSecondGroup");
 function buildTicks() {
   const cx = 100;
   const cy = 100;
-  const rOuter = 96;
+  const rOuter = 92;
   for (let i = 0; i < 60; i++) {
     const angle = (i / 60) * 2 * Math.PI - Math.PI / 2;
     const isMajor = i % 5 === 0;
-    const rInner = isMajor ? rOuter - 22 : rOuter - 8;
+    const rInner = isMajor ? rOuter - 21 : rOuter - 9;
     const x1 = cx + rInner * Math.cos(angle);
     const y1 = cy + rInner * Math.sin(angle);
     const x2 = cx + rOuter * Math.cos(angle);

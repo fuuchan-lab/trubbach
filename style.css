@@ -254,8 +254,7 @@ body::before {
 
 .sbb-face {
   fill: #ffffff;
-  stroke: #b9bec5;
-  stroke-width: 7;
+  stroke: none;
 }
 
 /* Mondaine風：時間の目盛りは太いバー、分は細いダッシュ */
@@ -267,7 +266,7 @@ body::before {
 
 .sbb-tick-minor {
   stroke: #111111;
-  stroke-width: 2.4;
+  stroke-width: 1.8;
   stroke-linecap: butt;
 }
 
@@ -283,12 +282,12 @@ body::before {
 
 .sbb-hand--minute {
   stroke: #111111;
-  stroke-width: 6.5;
+  stroke-width: 8.5;
 }
 
 .sbb-hand--second {
   stroke: var(--accent);
-  stroke-width: 2.2;
+  stroke-width: 2.6;
   stroke-linecap: butt;
 }
 
