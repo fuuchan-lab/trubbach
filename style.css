@@ -254,37 +254,42 @@ body::before {
 
 .sbb-face {
   fill: #ffffff;
-  stroke: #1c1e21;
-  stroke-width: 2;
-}
-
-.sbb-tick-major {
-  stroke: #1c1e21;
-  stroke-width: 3;
-}
-
-.sbb-tick-minor {
-  stroke: #1c1e21;
-  stroke-width: 1.2;
-}
-
-.sbb-hand {
-  stroke-linecap: round;
-}
-
-.sbb-hand--hour {
-  stroke: #1c1e21;
+  stroke: #b9bec5;
   stroke-width: 7;
 }
 
+/* Mondaine風：時間の目盛りは太いバー、分は細いダッシュ */
+.sbb-tick-major {
+  stroke: #111111;
+  stroke-width: 6.5;
+  stroke-linecap: butt;
+}
+
+.sbb-tick-minor {
+  stroke: #111111;
+  stroke-width: 2.4;
+  stroke-linecap: butt;
+}
+
+/* 針は角ばった平らな端 */
+.sbb-hand {
+  stroke-linecap: butt;
+}
+
+.sbb-hand--hour {
+  stroke: #111111;
+  stroke-width: 9;
+}
+
 .sbb-hand--minute {
-  stroke: #1c1e21;
-  stroke-width: 5;
+  stroke: #111111;
+  stroke-width: 6.5;
 }
 
 .sbb-hand--second {
   stroke: var(--accent);
-  stroke-width: 2.5;
+  stroke-width: 2.2;
+  stroke-linecap: butt;
 }
 
 .sbb-second-dot {
@@ -292,7 +297,11 @@ body::before {
 }
 
 .sbb-hub {
-  fill: #1c1e21;
+  fill: var(--accent);
+}
+
+.sbb-hub-core {
+  fill: #ffffff;
 }
 
 .sbb-note, .fx-note {
