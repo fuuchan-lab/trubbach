@@ -297,11 +297,7 @@ body::before {
 }
 
 .sbb-hub {
-  fill: var(--accent);
-}
-
-.sbb-hub-core {
-  fill: #ffffff;
+  fill: #111111;
 }
 
 .sbb-note, .fx-note {
